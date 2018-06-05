@@ -1,0 +1,1 @@
+ALTER TABLE test_user ADD age VARCHAR(25);

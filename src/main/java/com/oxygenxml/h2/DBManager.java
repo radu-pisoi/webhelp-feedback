@@ -38,11 +38,13 @@ public class DBManager {
 	    	locations.add("db/migration");
 	    	locations.addAll(Arrays.asList(additionalLocations));
 	    	
-	    	logger.info("Load mmigrations: " + locations);
+	    	logger.info("Load migrations: " + locations);
 			flyway.setLocations(locations.toArray(new String[0]));
 		}
 	    
-		flyway.clean();
+	    logger.info("Baseline...");
+		flyway.baseline();
+		logger.info("Migrate...");
 	    flyway.migrate();
 	    
 	    DriverDataSource dataSource = (DriverDataSource) flyway.getDataSource();

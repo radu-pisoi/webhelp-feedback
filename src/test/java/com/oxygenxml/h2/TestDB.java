@@ -29,16 +29,18 @@ public class TestDB {
 
 	private String user = "wh";  
 	
+	
+	
 
 	@BeforeClass
-	public void installDB() throws Exception {
-	    tempDBFile = File.createTempFile("file", ".db");
-	    tempDBFile.deleteOnExit();
-	    
-	    tempDBFile = File.createTempFile("file", ".db");
-	    tempDBFile.deleteOnExit();
+	public void installDB() throws Exception {	    	    
+//	    tempDBFile = File.createTempFile("file", ".db");
+//	    tempDBFile.deleteOnExit();
+		tempDBFile = new File("test/h2-r.db");
+		System.out.println("Write DB to " + tempDBFile.getAbsolutePath());
+		
 	    dbURL = "jdbc:h2:file:" + tempDBFile.getAbsolutePath();	    
-		DBManager.installDB(dbURL, user, null , new String[] {"db/test"});
+		DBManager.installDB(dbURL, user, null , null);
 	}
 	
 
