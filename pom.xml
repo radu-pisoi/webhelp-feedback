@@ -2,10 +2,15 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.oxygenxml</groupId>
+	<parent>
+		<groupId>com.oxygenxml</groupId>
+		<artifactId>oxygen-dita-publishing-superpom</artifactId>
+		<version>20.1-SNAPSHOT</version>
+	</parent>
+
 	<artifactId>oxygen-webhelp-feedback</artifactId>
 	<packaging>jar</packaging>
-	<version>0.1-SNAPSHOT</version>
+
 	<name>Test WebHelp Feedback</name>
 
 	<properties>
@@ -18,10 +23,14 @@
 		<dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
-			<version>6.14.3</version>
 			<scope>test</scope>
 		</dependency>
 
+		<dependency>
+			<groupId>com.oxygenxml</groupId>
+			<artifactId>oxygen-basic-utilities</artifactId>
+			<scope>test</scope>
+		</dependency>
 
 		<dependency>
 			<groupId>org.flywaydb</groupId>
@@ -40,8 +49,22 @@
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
+
 		</dependency>
+
+		<dependency>
+			<groupId>com.github.jsqlparser</groupId>
+			<artifactId>jsqlparser</artifactId>
+			<version>1.2</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.3.1.Final</version>
+		</dependency>
+
 
 	</dependencies>
 	<build>
